@@ -1,0 +1,27 @@
+name: Envioments
+on:
+  workflow_despatch:
+
+jobs:
+  DEV:
+    runs-on: ubuntu-lastest
+
+    steps:
+      -name: Deploy
+      run: echo "Deployed to DEV"
+
+  STAGE:
+    runs-on: ubuntu-lastest
+
+    needs: DEV
+    steps:
+      -name: Deploy
+      run: echo "Deployed to Stage"
+
+  PROD:
+    runs-on: ubuntu-lastest
+
+    needs: STAGE
+    steps:
+      -name: Deploy
+      run: echo "Deployed to Prod"  
