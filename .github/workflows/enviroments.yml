@@ -1,28 +1,28 @@
 name: Envioments
 
 on:
-  workflow_despatch:
+  workflow_dispatch:
 
 jobs:
   DEV:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
 
     steps:
-      -name: Deploy
-      run: echo "Deployed to DEV"
+      - name: Deploy
+        run: echo "Deployed to DEV"
 
   STAGE:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
 
     needs: DEV
     steps:
-      -name: Deploy
-      run: echo "Deployed to Stage"
+      - name: Deploy
+        run: echo "Deployed to Stage"
 
   PROD:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
 
     needs: STAGE
     steps:
-      -name: Deploy
-      run: echo "Deployed to Prod"  
+      - name: Deploy
+        run: echo "Deployed to Prod"  
